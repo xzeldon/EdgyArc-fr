@@ -291,7 +291,7 @@
 }
 
 #commonDialogWindow {
-  background-color: var(--arrowpanel-background) !important;
+  background-color: var(--panel-background-color) !important;
 }
 
 #tab-notification-deck .notificationbox-stack {
@@ -314,7 +314,7 @@
 }
 
 .dialogFrame {
-  background-color: var(--arrowpanel-background) !important;
+  background-color: var(--panel-background-color) !important;
 }
 
 /* Prevent pages from being completely transparent */
