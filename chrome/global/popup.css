@@ -7,6 +7,12 @@
   --panel-menuitem-margin: var(--uc-panel-menuitem-margin-block) var(--uc-panel-menuitem-margin-inline) !important;
   --panel-menuitem-padding-block: 6px !important;
   --panel-menuitem-padding-inline: 10px !important;
+  /* Firefox < 151 reads the --arrowpanel-* names. Colors use the same legacy-first fallback below. */
+  --arrowpanel-border-radius: var(--panel-border-radius) !important;
+  --arrowpanel-menuitem-border-radius: var(--panel-menuitem-border-radius) !important;
+  --arrowpanel-menuitem-margin: var(--panel-menuitem-margin) !important;
+  --arrowpanel-menuitem-padding-block: var(--panel-menuitem-padding-block) !important;
+  --arrowpanel-menuitem-padding-inline: var(--panel-menuitem-padding-inline) !important;
   --uc-panel-menuicon-margin-inline: 14px;
   --uc-panel-menuitem-margin-inline: 4px;
   --uc-panel-menuitem-margin-block: 2px;
@@ -15,9 +21,7 @@
 
   --uc-panel-zoom-button-padding: 8px;
   --uc-panel-zoom-button-inline-padding: 9px;
-  --uc-panel-zoom-padding-block: calc(
-    var(--panel-separator-margin-vertical) + var(--uc-panel-menuitem-margin-block)
-  );
+  --uc-panel-zoom-padding-block: calc(var(--panel-separator-margin-vertical) + var(--uc-panel-menuitem-margin-block));
 
   --uc-autocomplete-panel-menuitem-margin: 4px;
   --uc-autocomplete-panel-menuicon-padding-inline: 14px;
@@ -417,8 +421,8 @@
   padding-inline: 2px !important;
 
   & > .autocomplete-richlistbox {
-    background: var(--panel-background-color) !important;
-    box-shadow: 0 0 0 1px inset var(--panel-border-color) !important;
+    background: var(--arrowpanel-background, var(--panel-background-color)) !important;
+    box-shadow: 0 0 0 1px inset var(--arrowpanel-border-color, var(--panel-border-color)) !important;
     height: auto !important;
     margin-block: -10px !important;
     margin-inline: -2px !important;
@@ -532,13 +536,13 @@ panelview .toolbarbutton-1,
     -moz-window-shadow: none !important;
     background: 0 !important;
     border: 0 !important;
-    color: var(--panel-text-color) !important;
+    color: var(--arrowpanel-color, var(--panel-text-color)) !important;
   }
 
   #PopupAutoComplete > .autocomplete-richlistbox,
   .menupopup-arrowscrollbox {
-    background: var(--panel-background-color) !important;
-    border: 1px solid var(--panel-border-color) !important;
+    background: var(--arrowpanel-background, var(--panel-background-color)) !important;
+    border: 1px solid var(--arrowpanel-border-color, var(--panel-border-color)) !important;
   }
 
   /* make room for menu shadow */
@@ -568,7 +572,7 @@ panelview .toolbarbutton-1,
 
   /* use default shadow for subview menupopup (eg. bookmarks) */
   menupopup.PanelUI-subView {
-    --uc-box-shadow: 0 0 0 1px var(--panel-border-color);
+    --uc-box-shadow: 0 0 0 1px var(--arrowpanel-border-color, var(--panel-border-color));
     --uc-margin: 1px !important;
     margin-top: -5px !important;
   }
@@ -835,8 +839,8 @@ dialog {
  * CSS reference: https://searchfox.org/mozilla-central/source/browser/components/tabpreview/tabpreview.css
  * Requires `browser.tabs.cardPreview.enabled` set to `true` */
 .tab-preview-container {
-  background-color: var(--panel-background-color) !important;
-  color: var(--panel-text-color) !important;
+  background-color: var(--arrowpanel-background, var(--panel-background-color)) !important;
+  color: var(--arrowpanel-color, var(--panel-text-color)) !important;
   border: 0.5px solid var(--panel-separator-color) !important;
   border-radius: 8.5px !important;
 
