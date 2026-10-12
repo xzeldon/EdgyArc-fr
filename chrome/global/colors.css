@@ -56,11 +56,6 @@
   --panel-border-color: light-dark(#fff, #636363) !important;
   --panel-background-color-dimmed: light-dark(#565656, #565656) !important;
   --panel-background-color-dimmed-further: light-dark(#707070, #707070) !important;
-  --arrowpanel-background: var(--panel-background-color) !important;
-  --arrowpanel-color: var(--panel-text-color) !important;
-  --arrowpanel-border-color: var(--panel-border-color) !important;
-  --arrowpanel-dimmed: var(--panel-background-color-dimmed) !important;
-  --arrowpanel-dimmed-further: var(--panel-background-color-dimmed-further) !important;
   --panel-separator-color: light-dark(#dadada, #636363) !important;
   --panel-description-color: light-dark(#000a, #fffb) !important;
   --panel-disabled-color: light-dark(#9e9e9e, #b9b9b9) !important;
@@ -329,11 +324,6 @@
     --panel-border-color: light-dark(transparent, var(--panel-separator-color)) !important;
     --panel-background-color-dimmed: color-mix(in srgb, currentColor 17%, transparent) !important;
     --panel-background-color-dimmed-further: color-mix(in srgb, currentColor 30%, transparent) !important;
-    --arrowpanel-background: var(--panel-background-color) !important;
-    --arrowpanel-color: var(--panel-text-color) !important;
-    --arrowpanel-border-color: var(--panel-border-color) !important;
-    --arrowpanel-dimmed: var(--panel-background-color-dimmed) !important;
-    --arrowpanel-dimmed-further: var(--panel-background-color-dimmed-further) !important;
     --panel-separator-color: color-mix(in srgb, currentColor 17%, var(--panel-background-color)) !important;
     --panel-description-color: GrayText !important;
     --panel-disabled-color: GrayText !important;
@@ -368,13 +358,4 @@
     background-color: transparent !important;
     margin-inline-start: -4px !important;
   }
-}
-
-/* Backward compat: map old --arrowpanel-* to new --panel-* for pre-151 Firefox */
-:root {
-  --arrowpanel-background: var(--panel-background-color);
-  --arrowpanel-color: var(--panel-text-color);
-  --arrowpanel-border-color: var(--panel-border-color);
-  --arrowpanel-dimmed: var(--panel-background-color-dimmed);
-  --arrowpanel-dimmed-further: var(--panel-background-color-dimmed-further);
 }

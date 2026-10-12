@@ -4,7 +4,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 
 ![Screen Shot 2024-05-04 at 11 44 39 PM](https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/6f0879fa-f08b-4e36-91dd-29e321f81193)
 
-### This branch only supports Firefox v137+. For older versions, please see the [v136 branch](https://github.com/Loskir/EdgyArc-fr/tree/v136).
+### This branch only supports the current Firefox ESR (v153). For v136 and older, please see the [v136 branch](https://github.com/Loskir/EdgyArc-fr/tree/v136).
 
 ## Features
 
@@ -28,7 +28,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 - Proper translucency support for Sidebery (introduced in FF 130.0)
 - Noise texture background tweak
 - `af.edgyarc.autohide-sidebar-slide`
-- Support for Firefox v137+
+- Support for Firefox ESR v153
 - Support for translucency (Mica) on Windows
 
 ## Usage
