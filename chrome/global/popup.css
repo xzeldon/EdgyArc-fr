@@ -16,6 +16,11 @@
   --uc-panel-menuicon-margin-inline: 14px;
   --uc-panel-menuitem-margin-inline: 4px;
   --uc-panel-menuitem-margin-block: 2px;
+  /* Resolve panel colors here: Firefox redefines --panel-*-color on menupopup/panel itself
+   * (Menu/MenuText/ThreeDShadow), and Menu is translucent when Windows 11 Mica popups are on. */
+  --uc-panel-background-color: var(--arrowpanel-background, var(--panel-background-color));
+  --uc-panel-text-color: var(--arrowpanel-color, var(--panel-text-color));
+  --uc-panel-border-color: var(--arrowpanel-border-color, var(--panel-border-color));
   --panel-separator-margin-vertical: 2px !important;
   --panel-separator-margin-horizontal: 0 !important;
 
@@ -421,8 +426,8 @@
   padding-inline: 2px !important;
 
   & > .autocomplete-richlistbox {
-    background: var(--arrowpanel-background, var(--panel-background-color)) !important;
-    box-shadow: 0 0 0 1px inset var(--arrowpanel-border-color, var(--panel-border-color)) !important;
+    background: var(--uc-panel-background-color) !important;
+    box-shadow: 0 0 0 1px inset var(--uc-panel-border-color) !important;
     height: auto !important;
     margin-block: -10px !important;
     margin-inline: -2px !important;
@@ -536,13 +541,13 @@ panelview .toolbarbutton-1,
     -moz-window-shadow: none !important;
     background: 0 !important;
     border: 0 !important;
-    color: var(--arrowpanel-color, var(--panel-text-color)) !important;
+    color: var(--uc-panel-text-color) !important;
   }
 
   #PopupAutoComplete > .autocomplete-richlistbox,
   .menupopup-arrowscrollbox {
-    background: var(--arrowpanel-background, var(--panel-background-color)) !important;
-    border: 1px solid var(--arrowpanel-border-color, var(--panel-border-color)) !important;
+    background: var(--uc-panel-background-color) !important;
+    border: 1px solid var(--uc-panel-border-color) !important;
   }
 
   /* make room for menu shadow */
@@ -572,7 +577,7 @@ panelview .toolbarbutton-1,
 
   /* use default shadow for subview menupopup (eg. bookmarks) */
   menupopup.PanelUI-subView {
-    --uc-box-shadow: 0 0 0 1px var(--arrowpanel-border-color, var(--panel-border-color));
+    --uc-box-shadow: 0 0 0 1px var(--uc-panel-border-color);
     --uc-margin: 1px !important;
     margin-top: -5px !important;
   }
@@ -839,8 +844,8 @@ dialog {
  * CSS reference: https://searchfox.org/mozilla-central/source/browser/components/tabpreview/tabpreview.css
  * Requires `browser.tabs.cardPreview.enabled` set to `true` */
 .tab-preview-container {
-  background-color: var(--arrowpanel-background, var(--panel-background-color)) !important;
-  color: var(--arrowpanel-color, var(--panel-text-color)) !important;
+  background-color: var(--uc-panel-background-color) !important;
+  color: var(--uc-panel-text-color) !important;
   border: 0.5px solid var(--panel-separator-color) !important;
   border-radius: 8.5px !important;
 
